@@ -1,0 +1,262 @@
+{% schema %}
+{
+  "name": "Nareeka Hero Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero Heading",
+      "default": "Explore Our Collections"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Slide 1 Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1_mobile",
+      "label": "Slide 1 Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "collection_1",
+      "label": "Collection 1 Name"
+    },
+    {
+      "type": "url",
+      "id": "collection_link_1",
+      "label": "Collection 1 Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Slide 2 Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2_mobile",
+      "label": "Slide 2 Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "collection_2",
+      "label": "Collection 2 Name"
+    },
+    {
+      "type": "url",
+      "id": "collection_link_2",
+      "label": "Collection 2 Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Slide 3 Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3_mobile",
+      "label": "Slide 3 Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "collection_3",
+      "label": "Collection 3 Name"
+    },
+    {
+      "type": "url",
+      "id": "collection_link_3",
+      "label": "Collection 3 Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Slide 4 Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4_mobile",
+      "label": "Slide 4 Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "collection_4",
+      "label": "Collection 4 Name"
+    },
+    {
+      "type": "url",
+      "id": "collection_link_4",
+      "label": "Collection 4 Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nareeka Hero Slider"
+    }
+  ]
+}
+{% endschema %}
+
+
+<div class="nareekacollection-hero-slider">
+  <div class="nareekacollection-left">
+    <h2>{{ section.settings.hero_heading }}</h2>
+    <div class="nareekacollection-collections">
+      <a href="{{ section.settings.collection_link_1 }}" class="nareekacollection-item active" data-index="1">
+        {{ section.settings.collection_1 }}
+      </a>
+      <a href="{{ section.settings.collection_link_2 }}" class="nareekacollection-item" data-index="2">
+        {{ section.settings.collection_2 }}
+      </a>
+      <a href="{{ section.settings.collection_link_3 }}" class="nareekacollection-item" data-index="3">
+        {{ section.settings.collection_3 }}
+      </a>
+      <a href="{{ section.settings.collection_link_4 }}" class="nareekacollection-item" data-index="4">
+        {{ section.settings.collection_4 }}
+      </a>
+    </div>
+  </div>
+  <div class="nareekacollection-images">
+    <img src="{{ section.settings.image_1 | img_url: 'master' }}" class="nareekacollection-slide active desktop-img" data-index="1">
+    <img src="{{ section.settings.image_1_mobile | img_url: 'master' }}" class="nareekacollection-slide active mobile-img" data-index="1">
+    
+    <img src="{{ section.settings.image_2 | img_url: 'master' }}" class="nareekacollection-slide desktop-img" data-index="2">
+    <img src="{{ section.settings.image_2_mobile | img_url: 'master' }}" class="nareekacollection-slide mobile-img" data-index="2">
+    
+    <img src="{{ section.settings.image_3 | img_url: 'master' }}" class="nareekacollection-slide desktop-img" data-index="3">
+    <img src="{{ section.settings.image_3_mobile | img_url: 'master' }}" class="nareekacollection-slide mobile-img" data-index="3">
+    
+    <img src="{{ section.settings.image_4 | img_url: 'master' }}" class="nareekacollection-slide desktop-img" data-index="4">
+    <img src="{{ section.settings.image_4_mobile | img_url: 'master' }}" class="nareekacollection-slide mobile-img" data-index="4">
+  </div>
+</div>
+
+<style>
+.nareekacollection-hero-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: row;
+  gap: 40px; /* Space between text and image */
+  width: 100%;
+}
+
+.nareekacollection-left {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: row; /* Keep H2 and collections in a row */
+  align-items: center;
+  justify-content: space-between; /* Push H2 left and collections right */
+  width: 100%;
+}
+
+.nareekacollection-left h2 {
+  margin: 0;
+  white-space: nowrap; /* Prevents heading from breaking into two lines */
+}
+
+.nareekacollection-collections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between collection items */
+  justify-content: flex-end; /* Push collections to the right */
+  flex: 1;
+}
+
+.nareekacollection-collections .nareekacollection-item {
+  display: inline-block;
+  font-size: 18px;
+  padding: 12px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  min-width: 150px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.nareekacollection-collections .nareekacollection-item.active {
+  background-color: #ff6600;
+}
+
+.nareekacollection-images {
+  flex: 1;
+  position: relative;
+}
+
+.nareekacollection-images img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.nareekacollection-images img.active {
+  opacity: 1;
+}
+
+.desktop-img {
+  display: block;
+}
+
+.mobile-img {
+  display: none;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .nareekacollection-hero-slider {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nareekacollection-left {
+    flex-direction: column; /* Stack H2 and collections in mobile */
+    text-align: center;
+    align-items: center;
+  }
+
+  .nareekacollection-collections {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center; /* Center collections in mobile */
+    align-items: center;
+  }
+
+  .desktop-img {
+    display: none;
+  }
+
+  .mobile-img {
+    display: block;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let index = 1;
+    const slides = document.querySelectorAll(".nareekacollection-images .nareekacollection-slide");
+    const collectionItems = document.querySelectorAll(".nareekacollection-collections .nareekacollection-item");
+
+    function changeSlide() {
+      slides.forEach((slide) => slide.classList.remove("active"));
+      collectionItems.forEach((item) => item.classList.remove("active"));
+
+      const currentSlide = document.querySelector(`.nareekacollection-images .nareekacollection-slide[data-index="${index}"]`);
+      const currentItem = document.querySelector(`.nareekacollection-collections .nareekacollection-item[data-index="${index}"]`);
+
+      currentSlide.classList.add("active");
+      currentItem.classList.add("active");
+
+      index = index < slides.length / 2 ? index + 1 : 1;
+    }
+
+    setInterval(changeSlide, 4000);
+  });
+</script>
