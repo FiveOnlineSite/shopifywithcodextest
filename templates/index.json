@@ -223,6 +223,72 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "shop_by_concern_testimonial_products_q49yVY": {
+      "type": "shop-by-concern-testimonial-products",
+      "blocks": {
+        "concern_jPzUxG": {
+          "type": "concern",
+          "settings": {
+            "tab_title": "Damage Repairing",
+            "tab_image": "shopify://shop_images/five-online-web-designing-company-in-mumbai-removebg-preview.png",
+            "active_label_text": "Damage Repairing",
+            "testimonial_image": "shopify://shop_images/pexels-fwstudio-33348-164005.jpg",
+            "customer_name": "Riya",
+            "age": "31",
+            "concern_text": "Damage",
+            "type_text": "Straight (1B)",
+            "quote": "My hair became super dry and frizzy after I got it coloured. Nothing has worked this well — they feel insanely soft and look SO healthy. Can't recommend enough!",
+            "collection": "frontpage",
+            "product_label": "Repair Ritual",
+            "explore_link": ""
+          }
+        },
+        "concern_zgUr6J": {
+          "type": "concern",
+          "settings": {
+            "tab_title": "Frizz Fighting",
+            "active_label_text": "Frizz Fighting",
+            "customer_name": "Tanya",
+            "age": "28",
+            "concern_text": "Frizz",
+            "type_text": "Wavy (2A)",
+            "quote": "My hair became super dry and frizzy after I got it coloured. Nothing has worked this well — they feel insanely soft and look SO healthy. Can't recommend enough!",
+            "collection": "",
+            "product_label": "No More Frizz",
+            "explore_link": ""
+          }
+        },
+        "concern_DXVxtc": {
+          "type": "concern",
+          "settings": {
+            "tab_title": "Style Sculpting",
+            "active_label_text": "Style Sculpting",
+            "customer_name": "Aisha",
+            "age": "26",
+            "concern_text": "Styling",
+            "type_text": "Curly (3A)",
+            "quote": "My hair became super dry and frizzy after I got it coloured. Nothing has worked this well — they feel insanely soft and look SO healthy. Can't recommend enough!",
+            "collection": "",
+            "product_label": "Style Hold",
+            "explore_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "concern_jPzUxG",
+        "concern_zgUr6J",
+        "concern_DXVxtc"
+      ],
+      "name": "Concern testimonial shop",
+      "settings": {
+        "heading": "MOXIE!",
+        "background_color": "#ffffff",
+        "accent_color": "#e6ff42",
+        "explore_label": "Explore All",
+        "products_limit": 8,
+        "default_rating_text": "4.8 (151)"
+      }
     }
   },
   "order": [
@@ -230,6 +296,7 @@
     "slideshow_knExJP",
     "image_banner",
     "featured_collection",
-    "collection_list_KdefHf"
+    "collection_list_KdefHf",
+    "shop_by_concern_testimonial_products_q49yVY"
   ]
 }
